@@ -9,5 +9,5 @@ This file is for test my knowledge  the express , mongoose, react, nodejs
 1.4. Створення файлу .gitignore та ігнорування в ньому папки  node_modules
 ## commit 'create server and connect db'
 1.5. У файлі index.js  формуємо підключення до MongoDB  за допомогою констант-ключив пакету dotenv та його файлу .env
-
+## commit 'config connect to MongoDB'
 
