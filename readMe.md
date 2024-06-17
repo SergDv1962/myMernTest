@@ -53,6 +53,22 @@ This file is for test my knowledge  the express , mongoose, react, nodejs
 6.7.1. Так як форми сторінок обнакові то копіюємо логін сторінку і вносимо деякі зміни
 6.7.2. Перевіряємо відображення у браузері
 ## commit 'add pages & component. Routing. Login&Registation'
+7. Застосовуємо REDUX
+7.1. Грузимо пакети \@reduxjs/toolkit\ та \react-redux\
+7.2. Створюємо папку redux і там папку features та файл store.js. Заповнюемо файл
+7.3. У файлі index.js огортаємо у Provider застосунок App  і додаємо проп store до Provider
+7.4. Створюємо у папці  features папку auth з файлом authSlice.js
+7.5. Загружаємо пакети axios
+7.6. Створююмо папку units з файлом axios. Доповнюємо вньому axios
+7.7. Заповнюємо файл authSlice.js початково з фунцією authSlice 
+7.8. Там же створюємо асінхроний запрос registerUse.
+7.9. Внесли забутий токен у регістрації на бекенді в контролерс  auth
+7.10. вмикаємо кнопку "підтвердити" у RegisterPage. Перевіряємо у роботу на браузері при створені адміна отримуємо його у бд
+## commit 'Registration user is working'
+
+
+
+
 
 
 

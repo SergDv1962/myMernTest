@@ -1,9 +1,22 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { registerUser } from "../redux/feature/auth/authSlice";
 
 export const RegisterPage  = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+
+  const handleSubmit = () => {
+   try {
+     dispatch(registerUser({ username, password }));
+     setPassword("");
+     setUsername("");
+   } catch (error) {
+     console.log(error);
+   }
+ };
 
   return (
     <form
@@ -36,6 +49,7 @@ export const RegisterPage  = () => {
       <div className="flex gap-8 justify-center mt-4">
         <button
           type="submit"
+          onClick={handleSubmit}
           className="flex justify-center item-center text-xs bg-gray-600 text-white rounded-sm py-2 px-4"
         >
           Підтвердити
