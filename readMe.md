@@ -10,4 +10,5 @@ This file is for test my knowledge  the express , mongoose, react, nodejs
 ## commit 'create server and connect db'
 1.5. У файлі index.js  формуємо підключення до MongoDB  за допомогою констант-ключив пакету dotenv та його файлу .env
 ## commit 'config connect to MongoDB'
-
+1.6. Налаштовуємо мінімальні налаштування нашого express, це підключення пакету cors - пакет для того щоб ми могли відправляти запроси з різних api-адрес і у бекенда не було проблем. А також app.use(express.json()); для того щоб сказати що ми бубемо постійно приймати з фронтенда запроси у форматі json.
+## commit 'min config express'
