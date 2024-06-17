@@ -65,6 +65,12 @@ This file is for test my knowledge  the express , mongoose, react, nodejs
 7.9. Внесли забутий токен у регістрації на бекенді в контролерс  auth
 7.10. вмикаємо кнопку "підтвердити" у RegisterPage. Перевіряємо у роботу на браузері при створені адміна отримуємо його у бд
 ## commit 'Registration user is working'
+8. Застосовуемо Toastify для визуалізації вспливаючих повідомлень про події та помилки
+8.1. \npm i react-toastify\
+8.2. імпортуємо його у App.js, а потім в RegisterPage і там його використовуєм
+8.3. Перевіряємо в браузері Спочатку зареєструвати тогож самого адміна а потім нового
+## commit 'add react-toastify'
+
 
 
 
