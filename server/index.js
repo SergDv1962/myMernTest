@@ -1,16 +1,25 @@
 import express from "express";
 import mongoose from "mongoose";
+import dotenv from "dotenv";
 
 const app = express();
-const port = 3002;
+dotenv.config();
+
+//Constants
+const PORT = process.env.PORT || 3001;
+const DB_USER = process.env.DB_USER;
+const DB_PASSWORD = process.env.DB_PASSWORD;
+const DB_NAME = process.env.DB_NAME;
 
 async function start() {
   try {
-   //  await mongoose.connect("адреса підключення до твоєї бази з паролем");
-    app.listen(port, () => console.log(`Server listening to port ${port}`));
+    await mongoose.connect(
+      `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.p7x4moj.mongodb.net/${DB_NAME}?retryWrites=true&w=majority&appName=Cluster0`
+    );
+    app.listen(PORT, () => console.log(`Server listening to port ${PORT}`));
   } catch (error) {
     console.log(error);
   }
 }
 
-start()
+start();
