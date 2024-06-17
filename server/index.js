@@ -16,6 +16,10 @@ const DB_NAME = process.env.DB_NAME;
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+   return res.json({message:'All this fine now'})
+})
+
 async function start() {
   try {
     await mongoose.connect(

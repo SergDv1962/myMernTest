@@ -12,3 +12,5 @@ This file is for test my knowledge  the express , mongoose, react, nodejs
 ## commit 'config connect to MongoDB'
 1.6. Налаштовуємо мінімальні налаштування нашого express, це підключення пакету cors - пакет для того щоб ми могли відправляти запроси з різних api-адрес і у бекенда не було проблем. А також app.use(express.json()); для того щоб сказати що ми бубемо постійно приймати з фронтенда запроси у форматі json.
 ## commit 'min config express'
+1.7. перевіряємо роботу бекенда: для цього створюємо запрос (endpoint) та тестуємо на Постмене
+## commit 'text work backend-frontend'
