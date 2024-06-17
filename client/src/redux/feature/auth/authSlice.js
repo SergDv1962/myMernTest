@@ -28,25 +28,25 @@ export const registerUser = createAsyncThunk(
   }
 );
 
-// export const loginUser = createAsyncThunk(
-//   "auth/loginUser",
-//   async ({ username, password }) => {
-//     try {
-//       const { data } = await axios.post("/auth/login", {
-//         username,
-//         password,
-//       });
+export const loginUser = createAsyncThunk(
+  "auth/loginUser",
+  async ({ username, password }) => {
+    try {
+      const { data } = await axios.post("/auth/login", {
+        username,
+        password,
+      });
 
-//       if (data.token) {
-//         window.localStorage.setItem("token", data.token);
-//       }
+      if (data.token) {
+        window.localStorage.setItem("token", data.token);
+      }
 
-//       return data;
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   }
-// );
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
 
 // export const getMe = createAsyncThunk("auth/getMe", async () => {
 //   try {
@@ -84,20 +84,20 @@ export const authSlice = createSlice({
         state.status = action.payload.message;
         state.isLoading = false;
       })
-  //     .addCase(loginUser.pending, (state) => {
-  //       state.isLoading = true;
-  //       state.status = null;
-  //     })
-  //     .addCase(loginUser.fulfilled, (state, action) => {
-  //       state.isLoading = false;
-  //       state.status = action.payload.message;
-  //       state.user = action.payload.user;
-  //       state.token = action.payload.token;
-  //     })
-  //     .addCase(loginUser.rejected, (state, action) => {
-  //       state.status = action.payload.message;
-  //       state.isLoading = false;
-  //     })
+      .addCase(loginUser.pending, (state) => {
+        state.isLoading = true;
+        state.status = null;
+      })
+      .addCase(loginUser.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.status = action.payload.message;
+        state.user = action.payload.user;
+        state.token = action.payload.token;
+      })
+      .addCase(loginUser.rejected, (state, action) => {
+        state.status = action.payload.message;
+        state.isLoading = false;
+      })
   //     .addCase(getMe.pending, (state) => {
   //       state.isLoading = true;
   //       state.status = null;

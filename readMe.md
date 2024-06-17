@@ -70,6 +70,11 @@ This file is for test my knowledge  the express , mongoose, react, nodejs
 8.2. імпортуємо його у App.js, а потім в RegisterPage і там його використовуєм
 8.3. Перевіряємо в браузері Спочатку зареєструвати тогож самого адміна а потім нового
 ## commit 'add react-toastify'
+9. Авторизація
+9.1. Починаємо у authSlice створюємо loginUser асінх.запрос
+9.2. Далі ідемо в LoginPage і робимо як у RegisterPage
+9.3. Перевіряємо в браузері на Авторизації адміна. Дивимось що в нетворк є запит а у локалсторідж є токен
+## commit 'autorisation login'
 
 
 

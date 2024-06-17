@@ -1,9 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { loginUser } from "../redux/feature/auth/authSlice";
+import { toast } from "react-toastify";
 
 export const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const { status } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (status) toast(status);
+  
+  }, [status]);
+
+  const handleSubmit = () => {
+    try {
+      dispatch(loginUser({ username, password }));
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <form
@@ -36,6 +54,7 @@ export const LoginPage = () => {
       <div className="flex gap-8 justify-center mt-4">
         <button
           type="submit"
+          onClick={handleSubmit}
           className="flex justify-center item-center text-xs bg-gray-600 text-white rounded-sm py-2 px-4"
         >
           Увійти
