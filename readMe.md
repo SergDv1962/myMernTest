@@ -30,3 +30,14 @@ This file is for test my knowledge  the express , mongoose, react, nodejs
 2.3.3. Створюємо роут та контролер для нього.
 2.3.4. тут ми вже використовуємо вшитий userId у запитах для пошуку юзера
 ## commit 'add Get Me of the user'
+# Step 2
+//FRONTEND
+3. Формуємо реакт застосунок
+3.1. Створюємо папку фронтенда client та грузимо реакт-застосунок \npx create-react-app .\. Прибираємо зайві файли з арр. Підключаємо шріфт попінс
+3.2. Загружаємо пакет Tailwind CSS /npm install -D tailwindcss/
+3.3. Ініціалізуємо \npx tailwindcss init\ і у з'явившейся папці конфіг налаштовуємо конфігурацію згідно сайту. Копіюємо з сайту налаштування у файлі index.css
+4. Формуємо папки pages та components з компонентами сторінок формату .jsx
+5. Встановлюємо пакети \npm i react-router-dom\
+## commit 'create react app & congif it'
+
+
