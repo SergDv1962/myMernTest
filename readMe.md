@@ -2,7 +2,7 @@
 This file is for test my knowledge  the express , mongoose, react, nodejs
 # Step 1
 //Backend// 
-1.Будування серверної частини у папці server
+1. Будування серверної частини у папці server
 1.1. ініціалізація та загрузка пакетів express, mongoose, cors, bcryptjs, dotenv, jsonwebtoken та nodemon -D. Cors - пакет для того щоб ми могли відправляти запроси з різних api-адрес і у бекенда не було проблем, dotenv - для змінних, jsonwebtoken - для регістрації та отримання токіна
 1.2. створення файлу index.js та скріпту запуску dev, всановлюємо type:"module"
 1.3. Підключення на index сервера через express та бази даних через mongoose
@@ -14,3 +14,9 @@ This file is for test my knowledge  the express , mongoose, react, nodejs
 ## commit 'min config express'
 1.7. перевіряємо роботу бекенда: для цього створюємо запрос (endpoint) та тестуємо на Постмене
 ## commit 'text work backend-frontend'
+2. Регістрація та авторізація. Початок створення застосунку.
+2.1. Регістрація 
+2.1.1 Створюємо модель User
+2.1.2 Створюємо роут та контролер для регістрації
+2.1.3 Перевіряємо на Постмане пост запрос: реєструемо нового юзера, а потім перевіряемо знову його. Повинно відповісти що юзер вже зареєстрован
+## commit 'start registration'
