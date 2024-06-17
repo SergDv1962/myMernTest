@@ -70,3 +70,32 @@ export const login = async (req, res) => {
     res.json({ message: "Помилка при авторизації" });
   }
 };
+
+// Get Me
+export const getMe = async (req, res) => {
+  const user = await User.findById(req.userId);
+
+  if (!user) {
+    return res.json({
+      message: "Такого user-а не існує",
+    });
+  }
+
+  const token = jwt.sign(
+    {
+      id: user._id,
+    },
+    process.env.JWT_SECRET,
+    { expiresIn: "30d" }
+  );
+
+  res.json({
+   token,
+   user,
+   message: "Ви успішно увійшли до системи",
+  })
+  try {
+  } catch (error) {
+   res.json({ message: "Не маєте доступу" });
+  }
+};
