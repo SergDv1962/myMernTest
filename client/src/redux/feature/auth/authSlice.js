@@ -48,25 +48,25 @@ export const loginUser = createAsyncThunk(
   }
 );
 
-// export const getMe = createAsyncThunk("auth/getMe", async () => {
-//   try {
-//     const { data } = await axios.get("/auth/me");
-//     return data;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// });
+export const getMe = createAsyncThunk("auth/getMe", async () => {
+  try {
+    const { data } = await axios.get("/auth/me");
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+});
 
 export const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    // logout: (state) => {
-    //   state.user = null;
-    //   state.token = null;
-    //   state.isLoading = false;
-    //   state.status = null;
-    // },
+    logout: (state) => {
+      state.user = null;
+      state.token = null;
+      state.isLoading = false;
+      state.status = null;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -98,25 +98,26 @@ export const authSlice = createSlice({
         state.status = action.payload.message;
         state.isLoading = false;
       })
-  //     .addCase(getMe.pending, (state) => {
-  //       state.isLoading = true;
-  //       state.status = null;
-  //     })
-  //     .addCase(getMe.fulfilled, (state, action) => {
-  //       state.isLoading = false;
-  //       state.status = null;
-  //       state.user = action.payload?.user;
-  //       state.token = action.payload?.token;
-  //     })
-  //     .addCase(getMe.rejected, (state, action) => {
-  //       state.status = action.payload.message;
-  //       state.isLoading = false;
-  //     });
+      //перевірка авторізації
+      .addCase(getMe.pending, (state) => {
+        state.isLoading = true;
+        state.status = null;
+      })
+      .addCase(getMe.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.status = null;
+        state.user = action.payload?.user;
+        state.token = action.payload?.token;
+      })
+      .addCase(getMe.rejected, (state, action) => {
+        state.status = action.payload.message;
+        state.isLoading = false;
+      });
   },
 });
 
-// export const checkIsAuth = (state) => Boolean(state.auth.token);
+export const checkIsAuth = (state) => Boolean(state.auth.token);
 
-// export const { logout } = authSlice.actions;
+export const { logout } = authSlice.actions;
 
 export default authSlice.reducer;
