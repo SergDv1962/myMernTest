@@ -1,7 +1,7 @@
 # start 17.06.24
 This file is for test my knowledge  the express , mongoose, react, nodejs
 # Step 1
-//Backend// 
+//BACKEND// 
 1. Будування серверної частини у папці server
 1.1. ініціалізація та загрузка пакетів express, mongoose, cors, bcryptjs, dotenv, jsonwebtoken та nodemon -D. Cors - пакет для того щоб ми могли відправляти запроси з різних api-адрес і у бекенда не було проблем, dotenv - для змінних, jsonwebtoken - для регістрації та отримання токіна
 1.2. створення файлу index.js та скріпту запуску dev, всановлюємо type:"module"
@@ -17,7 +17,7 @@ This file is for test my knowledge  the express , mongoose, react, nodejs
 2. Регістрація та авторізація. Початок створення застосунку.
 2.1. Регістрація 
 2.1.1 Створюємо модель User
-2.1.2 Створюємо роут та контролер для регістрації
+2.1.2 Створюємо роут та контролер для регістрації.  Внеси токен у регістрації так же як і у логін (Дивись 7.9.) 
 2.1.3 Перевіряємо на Постмане пост запрос: реєструемо нового юзера test, а потім перевіряемо знову його. Повинно відповісти що юзер вже зареєстрован
 ## commit 'start registration'
 2.2. Login. Створеня входження зареєстрованого юзера
@@ -62,7 +62,7 @@ This file is for test my knowledge  the express , mongoose, react, nodejs
 7.6. Створююмо папку units з файлом axios. Доповнюємо вньому axios
 7.7. Заповнюємо файл authSlice.js початково з фунцією authSlice 
 7.8. Там же створюємо асінхроний запрос registerUse.
-7.9. Внесли забутий токен у регістрації на бекенді в контролерс  auth
+7.9. //BACKEND//  Внесли забутий токен у регістрації на бекенді в контролерс  auth
 7.10. вмикаємо кнопку "підтвердити" у RegisterPage. Перевіряємо у роботу на браузері при створені адміна отримуємо його у бд
 ## commit 'Registration user is working'
 8. Застосовуемо Toastify для визуалізації вспливаючих повідомлень про події та помилки
@@ -84,6 +84,19 @@ This file is for test my knowledge  the express , mongoose, react, nodejs
 10.6. У LoginPage створюємо isAuth та навігацію для переходу на головну сторінку
 10.7. Теж саме проводимо для RegisterPage
 ## commit 'add GetMe & finish authorisation'
+# Step 3
+/BACKEND/
+11. Створення Поста
+11.1. Створюємо файл моделі поста Post
+11.2. У папці routes створюємо файл posts і пишемо код для Create post
+11.3. У файлі index.js додаємо роут для поста і імпортуємо його
+11.4. У папці controllers створюємо файл postControllers. Пишемо код для createPost.
+11.5. Для файлів постів(майбутні картинки) створюємо у папці server папку uploads
+11.6. Продовжуємо код у файлі postControllers
+## commit 'create Post into backend'
+# Step 4
+/FRONTEND/
+12. 
 
 
 
