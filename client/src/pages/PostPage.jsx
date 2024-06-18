@@ -9,14 +9,14 @@ import Moment from "react-moment";
 import axios from "../utils/axios.js";
 import { 
   Link, 
-  // useNavigate, 
+  useNavigate, 
   useParams } from "react-router-dom";
 import { 
-  // useDispatch, 
+  useDispatch, 
   useSelector 
 } from "react-redux";
-// import { removePost } from "../redux/feature/post/postSlice.js";
-// import { toast } from "react-toastify";
+import { removePost } from "../redux/feature/post/postSlice.js";
+import { toast } from "react-toastify";
 // import { createComment, getPostComments } from "../redux/feature/comment/commentSlice.js";
 // import { CommentItem } from "../components/CommentItem.jsx";
 
@@ -27,19 +27,19 @@ export const PostPage = () => {
   const { user } = useSelector((state) => state.auth);
   // const { comments } = useSelector((state) => state.comment);
 
-  // const navigate = useNavigate();
-  // const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const params = useParams();
 
-  // const removePostHandler = () => {
-  //   try {
-  //     dispatch(removePost(params.id));
-  //     toast("Пост був видалений");
-  //     navigate("/posts");
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  const removePostHandler = () => {
+    try {
+      dispatch(removePost(params.id));
+      toast("Пост був видалений");
+      navigate("/posts");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   // const handleSubmit = () => {
   //   try {
@@ -130,7 +130,7 @@ export const PostPage = () => {
                     </Link>
                   </button>
                   <button
-                    // onClick={removePostHandler}
+                    onClick={removePostHandler}
                     className="flex items-center justify-center gap-2 text-white opacity-50"
                   >
                     <AiFillDelete />

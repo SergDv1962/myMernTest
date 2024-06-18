@@ -139,6 +139,17 @@ This file is for test my knowledge  the express , mongoose, react, nodejs
 15.3. Йдемо на сторінку PostsPage.jsx. Пишемо код.
 15.4. перевіряємо на браузері в закладці мої пости
 ## commit 'get My Posts'
+16. Видаляемо пости remove Post
+/BACKEND/ 
+16.1. Йдемо routes/posts.js створюємо роут для функції removePost
+16.2. Далі у controllers/postsController створюємо функцію removePost (4:28:10)
+/FRONTEND/
+16.3. Далі у postSlice.js створюємо нову функцію removePost котра буде видаляти пост (4:29:26)
+16.4. Йдемо на PostPage (4:37:50) оформлення кнопок для редагування та видалення. Но в мене це вже зроблене в п.14.3.
+16.5. Далі підключення кнопки деліт (4:37:59)
+16.6. Перевіряємо у браузері кнопку видалення свого поста. Працює (4:40:45)
+## commit 'remove Post'
+
 
 
 

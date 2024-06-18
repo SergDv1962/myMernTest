@@ -28,14 +28,14 @@ export const getAllPosts = createAsyncThunk("post/getAllPosts", async () => {
   }
 });
 
-// export const removePost = createAsyncThunk('post/removePost', async (id) => {
-//   try {
-//     const {data} = await axios.delete(`/posts/${id}`, id)
-//     return data
-//   } catch (error) {
-//     console.log(error)
-//   }
-// });
+export const removePost = createAsyncThunk('post/removePost', async (id) => {
+  try {
+    const {data} = await axios.delete(`/posts/${id}`, id)
+    return data
+  } catch (error) {
+    console.log(error)
+  }
+});
 
 // export const updatePost = createAsyncThunk('post/updatePost', async (updatedPost) => {
 //   try {
@@ -76,18 +76,18 @@ export const postSlice = createSlice({
       .addCase(getAllPosts.rejected, (state, action) => {
         state.loading = false;
       })
-      // // видалення поста по id
-      // .addCase(removePost.pending, (state) => {
-      //   state.loading = true;
-      //   state.status = null;
-      // })
-      // .addCase(removePost.fulfilled, (state, action) => {
-      //   state.loading = false;
-      //   state.posts = state.posts.filter(post => post._id !== action.payload._id)
-      // })
-      // .addCase(removePost.rejected, (state, action) => {
-      //   state.loading = false;
-      // })
+      // видалення поста по id
+      .addCase(removePost.pending, (state) => {
+        state.loading = true;
+        state.status = null;
+      })
+      .addCase(removePost.fulfilled, (state, action) => {
+        state.loading = false;
+        state.posts = state.posts.filter(post => post._id !== action.payload._id)
+      })
+      .addCase(removePost.rejected, (state, action) => {
+        state.loading = false;
+      })
       // // оновлення поста
       // .addCase(updatePost.pending, (state) => {
       //   state.loading = true;
