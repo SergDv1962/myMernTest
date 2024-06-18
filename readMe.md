@@ -149,6 +149,15 @@ This file is for test my knowledge  the express , mongoose, react, nodejs
 16.5. Далі підключення кнопки деліт (4:37:59)
 16.6. Перевіряємо у браузері кнопку видалення свого поста. Працює (4:40:45)
 ## commit 'remove Post'
+17. Редагування поста update Post
+/BACKEND/ 
+17.1. Йдемо routes/posts.js створюємо роут для функції updatePost
+17.2. Далі у controllers/postsController створюємо функцію updatePost
+/FRONTEND/
+17.3. Далі у postSlice.js створюємо нову функцію updatePost котра буде редагувати пост (4:53:32)
+17.4. Оформлюємо сторінку EditPostPage.jsx. Можно копіювати з AddPostPage.jsx з подальшим редагуванням (4:44:58)
+17.5. Перевіряємо у браузері редагування постів
+## commit -m 'update Post'
 
 
 
