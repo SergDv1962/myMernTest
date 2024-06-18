@@ -17,12 +17,14 @@ import {
 } from "react-redux";
 import { removePost } from "../redux/feature/post/postSlice.js";
 import { toast } from "react-toastify";
-// import { createComment, getPostComments } from "../redux/feature/comment/commentSlice.js";
+import { createComment, 
+  // getPostComments 
+} from "../redux/feature/comment/commentSlice.js";
 // import { CommentItem } from "../components/CommentItem.jsx";
 
 export const PostPage = () => {
   const [post, setPost] = useState(null);
-  // const [comment, setComment] = useState("");
+  const [comment, setComment] = useState("");
 
   const { user } = useSelector((state) => state.auth);
   // const { comments } = useSelector((state) => state.comment);
@@ -41,15 +43,15 @@ export const PostPage = () => {
     }
   };
 
-  // const handleSubmit = () => {
-  //   try {
-  //     const postId = params.id;
-  //     dispatch(createComment({ postId, comment }));
-  //     setComment('')
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  const handleSubmit = () => {
+    try {
+      const postId = params.id;
+      dispatch(createComment({ postId, comment }));
+      setComment('')
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   // const fetchComments = useCallback(async () => {
   //   try {
@@ -144,14 +146,14 @@ export const PostPage = () => {
           <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
             <input
               type="text"
-              // value={comment}
-              // onChange={(e) => setComment(e.target.value)}
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
               placeholder="Comment"
               className="text-black w-full rounded-sm bg-gray-400 border p-2 text-xs outline-none placeholder:text-gray-700"
             />
             <button
               type="submit"
-              // onClick={handleSubmit}
+              onClick={handleSubmit}
               className="flex justify-center items-center bg-gray-600 text-xs text-white rounded-sm py-2 px-4"
             >
               Відправити
