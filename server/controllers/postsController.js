@@ -74,3 +74,18 @@ export const getAll = async (req, res) => {
       res.json({ message: 'Something went wrong'})
    }
 }
+
+//Get Post By Id
+export const getById = async (req, res) => {
+   
+   try {
+      // post = await Post.findOneAndUpdate({_id: req.params.id}, {...} //  той самий варіант пошуку post по id
+      const post = await Post.findByIdAndUpdate(req.params.id, {
+         $inc: { views: 1},  // збільшуємо кількість просмотрів кожен раз на одиницю
+      })
+      
+      return res.json(post)
+   } catch (error) {
+      return res.json({ message: 'Something went wrong into getById'})
+   }
+}

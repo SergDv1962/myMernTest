@@ -122,7 +122,15 @@ This file is for test my knowledge  the express , mongoose, react, nodejs
 13.7. У components створюємо сторінку PopularPosts. Пишемо код сторінки
 13.8. У MainPage.js отримуємо posts та передаємо як пропси post у сторінки PostItem та PopularPosts
 ## commit 'Get all Posts'
-14. 
+14. Отримання поста по id. getById
+/BACKEND/ 
+14.1. Йдемо routes/posts.js створюємо роут для функції getById
+14.2. Далі у controllers/postsController створюємо функцію getById
+/FRONTEND/
+14.3. Сторінка де ми цей пост будемо показувати PostPage.jsx. Пишемо код.
+14.4. PostItem ми обгортали у Link для того щоб отримати params.id коли ми обираємо пост клікаючи по ньому де вказано \\Link to={`/${post._id}`}\\. 
+14.5. Перевіряємо у браузері клікаючи на пост ми на нього переходимо.(4:09:50 відіо)
+## commit 'Get Post by ID start'
 
 
 
