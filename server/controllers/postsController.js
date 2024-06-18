@@ -89,3 +89,20 @@ export const getById = async (req, res) => {
       return res.json({ message: 'Something went wrong into getById'})
    }
 }
+
+//Get My Posts
+export const getMyPosts = async (req, res) => {
+   
+   try {
+      const user = await User.findById(req.userId)
+      const list = await Promise.all(
+         user.posts.map(post => {
+            return Post.findById(post._id)
+         })
+      )
+
+      return res.json(list)
+   } catch (error) {
+      return res.json({ message: 'Something went wrong into getById'})
+   }
+}

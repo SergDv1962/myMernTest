@@ -131,6 +131,14 @@ This file is for test my knowledge  the express , mongoose, react, nodejs
 14.4. PostItem ми обгортали у Link для того щоб отримати params.id коли ми обираємо пост клікаючи по ньому де вказано \\Link to={`/${post._id}`}\\. 
 14.5. Перевіряємо у браузері клікаючи на пост ми на нього переходимо.(4:09:50 відіо)
 ## commit 'Get Post by ID start'
+15. Виводимо мої пости get My Posts
+/BACKEND/ 
+15.1. Йдемо routes/posts.js створюємо роут для функції getMyPosts
+15.2. Далі у controllers/postsController створюємо функцію getMyPosts
+/FRONTEND/
+15.3. Йдемо на сторінку PostsPage.jsx. Пишемо код.
+15.4. перевіряємо на браузері в закладці мої пости
+## commit 'get My Posts'
 
 
 

@@ -7,8 +7,14 @@ import {
 } from "react-icons/ai";
 import Moment from "react-moment";
 import axios from "../utils/axios.js";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { 
+  Link, 
+  // useNavigate, 
+  useParams } from "react-router-dom";
+import { 
+  // useDispatch, 
+  useSelector 
+} from "react-redux";
 // import { removePost } from "../redux/feature/post/postSlice.js";
 // import { toast } from "react-toastify";
 // import { createComment, getPostComments } from "../redux/feature/comment/commentSlice.js";
