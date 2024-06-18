@@ -96,7 +96,33 @@ This file is for test my knowledge  the express , mongoose, react, nodejs
 ## commit 'create Post into backend'
 # Step 4
 /FRONTEND/
-12. 
+12. Додавання поста AddPostPage
+12.1. Заповнюємо кодом сторінку додавання поста AddPostPage в частині форми і дивимось результат у браузері
+12.2. Створюємо у папці redux папку post з файлом postSlice.js. Пишемо код для  postSlice
+12.3. Йдемо у store і робимо редюсер для post: postSlice,
+12.4. Пишемо у файлі postSlice функцію котра буде експортувати пост- createPost. А далі доповнюємо екстраредюсер "створення поста"
+12.5. В файлі AddPostPage дописуємо код з єкшинами.
+12.6. Для того щоб вірно вказати шлях для зображення котре лежить в середині імпута потрібно прописати: \img src={URL.createObjectURL(image)}\
+12.6. //BACKEND// Для того щоб ми могли загружати картинки нам потрібні додаткові пакети тому повертаємось у папку сервер і загружаємо - npm i express-fileupload.
+12.7. //BACKEND// Далі у файлі index.js імпортуємо import fileUpload from "express-fileupload"; і створюємо Middleware: app.use(fileUpload()); та app.use(express.static('uploads')). 
+Де uploads це шлях коди будуть загружатись зображення
+12.8. Перевіряємо у браузері загрузку поста з зображенням та отримання потса в бд.
+## commit 'The adding of the Post'
+# Step 5
+13. Отримання всі постів Get All Post
+/BACKEND/
+13.1. Йдемо routes/posts.js створюємо роут для функції getAll
+13.2. Далі у controllers/postsController створюємо функцію getAll
+/FRONTEND/
+13.3. Далі у postSlice.js створюємо асінх.функцію getAllPosts та доповнюємо екстраредюсер
+13.3. Переходимо у MainPage.js та пишемо код сторінки
+13.4. У components створюємо сторінку PostItem. Пишемо код сторінки
+13.5. Встановлюємо додаткову бібліотеку \npm install react-icons --save\ для реакт іконок та імпортуємо іконки у PostItem
+13.6. Також встановлюємо бібліотеку \npm i react-moment\ та імпортуємо Moment для встановлення формату дати
+13.7. У components створюємо сторінку PopularPosts. Пишемо код сторінки
+13.8. У MainPage.js отримуємо posts та передаємо як пропси post у сторінки PostItem та PopularPosts
+## commit 'Get all Posts'
+14. 
 
 
 
