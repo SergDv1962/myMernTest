@@ -157,9 +157,9 @@ This file is for test my knowledge  the express , mongoose, react, nodejs
 17.3. Далі у postSlice.js створюємо нову функцію updatePost котра буде редагувати пост (4:53:32)
 17.4. Оформлюємо сторінку EditPostPage.jsx. Можно копіювати з AddPostPage.jsx з подальшим редагуванням (4:44:58)
 17.5. Перевіряємо у браузері редагування постів
-## commit -m 'update Post'
+## commit 'update Post'
 18. Створюємо коментарі -create Comment 
-/BACKEND/ 
+ 
 18.1. Створюємо модель комента у файлі Comment.js
 18.2. Створюємо роут комента у папці routes у файлі comments.js (5:10:58)
 18.3. Далі створюємо controllers/commentsController створюємо функцію createComment
@@ -169,9 +169,17 @@ This file is for test my knowledge  the express , mongoose, react, nodejs
 18.6. У store додаємо редюсер comment для commentSlice
 18.7. Створюємо у components компонент CommentItem.jsx
 18.8. У PostPage.jsx дописуємо код по коментам (5:24:56)
+18.9. Перевіряємо у браузері. Комент створюється і є у бд.
 ## commit 'create Comment'
-
-
+19. Виводимо комент
+/BACKEND/
+19.1. Йдемо routes/posts.js створюємо роут для функції getPostComments
+19.2. Далі у controllers/postsController створюємо функцію getPostComments (5:31:17), та імпортуємо компонент Comment
+/FRONTEND/
+19.3. Йдемо у commentSlice та пишемо функцію getPostComments та доповнюємо екстраредюсер
+19.4. Далі у PostPage отримуємо comments та размаплюємо їх
+19.5. Перевіряємо у браузері. Все працює.
+## commit 'Get Post Comments'
 
 
 

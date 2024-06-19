@@ -1,5 +1,6 @@
 import Post from "../models/Post.js";
 import User from "../models/User.js";
+import Comment from "../models/Comment.js";
 import path, {dirname} from "path"; //для можливості імпортувати картинку з запросу
 import { fileURLToPath } from "url"; //для можливості імпортувати картинку з запросу
 
@@ -145,5 +146,21 @@ export const updatePost = async (req, res) => {
       res.json(post)
    } catch (error) {
       return res.json({ message: 'Something went wrong into updatePost'})
+   }
+}
+
+// Get Post Comment
+export const getPostComments = async (req, res) => {
+   try {
+      const post = await Post.findById(req.params.id)
+      const list = await Promise.all(
+         post.comments.map((comment) => {
+            return Comment.findById(comment)
+         })
+      )
+      //повертаємо перелік всіх коментів
+      return res.json(list) 
+   } catch (error) {
+      return res.json({ message: 'Something went wrong into getPostComments'})
    }
 }
